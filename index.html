@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SplitGaussian: Reconstructing Dynamic Scenes via Visual Geometry Decomposition</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- MathJax -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+        displayMath: [ ['$$', '$$'], ['\\[', '\\]'] ],
+        processEscapes: true, 
+        tags: 'all',
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SplitGaussian: Reconstructing Dynamic Scenes via Visual Geometry Decomposition</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous
+            </span>
+          </div>
+          
+
+          
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              
+              <!-- Video Link. -->
+              
+              <!-- Code Link. -->
+              
+              <span class="link-block">
+                <a href="https://anonymous.4open.science/r/Anonymous-ICLR-2026-34A8/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+              <!-- Dataset Link. -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<div class="container is-max-desktop">
+
+<div class="content">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2>Method Overview</h2>
+    </div>
+</div>
+
+<p><img src="static/image/frame.png" alt="Frame work" style="max-width:100%; margin-top:1rem;" /></p>
+
+<p><em>Figure 1: Framework Overview. We adopt a two-stage training pipeline: Stage I disentangles static and dynamic Gaussians via region-specific supervision and visibility-driven pruning to enhance geometric stability; Stage II jointly optimizes both components, where static appearance is modeled without deformation and dynamic motion is learned via a spatiotemporally-conditioned deformation network, enabling mutual refinement and improved reconstruction fidelity.</em>
+<br /></p>
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2>Demo Video</h2>
+    </div>
+</div>
+<video src="static/video/demo3.mp4" controls="" width="100%" style="margin-top:1rem;border:none;" autoplay="" muted="" playsinline="" loop="">
+  Your browser does not support HTML5 video. Please download it to view.
+</video>
+
+<!-- Using HTML to center the abstract -->
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2>Abstract</h2>
+        <div class="content has-text-justified">
+Reconstructing dynamic 3D scenes from monocular video remains fundamentally challenging due to the need to jointly infer motion, structure, and appearance from limited observations. Existing dynamic scene reconstruction methods based on Gaussian Splatting often entangle static and dynamic elements in a shared representation, leading to motion leakage, geometric distortions, and temporal flickering. We identify that the root cause lies in the coupled modeling of geometry and appearance across time, which hampers both stability and interpretability. To address this, we propose SplitGaussian, a novel framework that explicitly decomposes scene representations into static and dynamic components. By decoupling motion modeling from background geometry and allowing only the dynamic branch to deform over time, our method prevents motion artifacts in static regions while supporting view- and time-dependent appearance refinement. This disentangled design not only enhances temporal consistency and reconstruction fidelity but also accelerates convergence. Extensive experiments demonstrate that SplitGaussian outperforms prior state-of-the-art methods in rendering quality, geometric stability, and motion separation.
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<!-- > Note: This is an example of a Jekyll-based project website template: [Github link](https://github.com/shunzh/project_website).\
+> The following content is generated by ChatGPT. The figure is manually added. -->
+
+<h2 id="free-viewpoint">Free Viewpoint</h2>
+<p>The following shows the results under free-viewpoint rendering.</p>
+<video src="static/video/basin_splitgs_render.mp4" controls="" width="100%" style="margin-top:1rem;border:none;" autoplay="" muted="" playsinline="" loop="">
+  Your browser does not support HTML5 video. Please download it to view.
+</video>
+
+<video src="static/video/bell_splitgs_render.mp4" controls="" width="100%" style="margin-top:1rem;border:none;" autoplay="" muted="" playsinline="" loop="">
+  Your browser does not support HTML5 video. Please download it to view.
+</video>
+
+<video src="static/video/sieve_splitgs_render.mp4" controls="" width="100%" style="margin-top:1rem;border:none;" autoplay="" muted="" playsinline="" loop="">
+  Your browser does not support HTML5 video. Please download it to view.
+</video>
+
+<h2 id="fixed-viewpoint">Fixed Viewpoint</h2>
+<p>The following shows the results from a fixed viewpoint.</p>
+<video src="static/video/as_splitgs_time.mp4" controls="" width="100%" style="margin-top:1rem;border:none;" autoplay="" muted="" playsinline="" loop="">
+  Your browser does not support HTML5 video. Please download it to view.
+</video>
+
+<video src="static/video/plate_splitgs_time.mp4" controls="" width="100%" style="margin-top:1rem;border:none;" autoplay="" muted="" playsinline="" loop="">
+  Your browser does not support HTML5 video. Please download it to view.
+</video>
+
+<video src="static/video/press_splitgs_time.mp4" controls="" width="100%" style="margin-top:1rem;border:none;" autoplay="" muted="" playsinline="" loop="">
+  Your browser does not support HTML5 video. Please download it to view.
+</video>
+
+
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> and <a href="https://github.com/shunzh/project_website">the Jekyll fork</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
